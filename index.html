@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+  <link rel="icon" href="./images/bookmark.png">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+  <div class="modal fade layer d-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-4">
+        <div class="modal-header pt-3 d-flex justify-content-between align-items-center">
+          <h5 class="modal-title d-flex justify-content-center align-items-center" id="exampleModalLabel">
+            <span class="red ms-2"></span>
+            <span class="orange ms-2"></span>
+            <span class="green ms-2"></span>
+          </h5>
+          <button type="button" class="btn-close d-flex align-items-center" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark close fa-2x"></i>
+          </button>
+        </div>
+        <div class="modal-body mt-4 p-0">
+          <p class="first-p">Site Name or Url is not valid, Please follow the rules below :</p>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li class="d-flex align-items-center">
+              <div><i class="fa-solid fa-arrow-right position-absolute fa-2xs top-50 translate-middle start-50 fw-bold"></i></div>
+              <p class="mb-0 ms-2">Site name must contain at least 3 characters</p>
+            </li>
+            <li class="d-flex align-items-center">
+              <div><i class="fa-solid fa-arrow-right position-absolute fa-2xs top-50 translate-middle start-50 fw-bold"></i></div>
+              <p class="mb-0 ms-2">Site URL must be a valid one</p>
+            </li>
+          
+            
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column justify-content-center align-items-center py-5">
+    <h1 class="text-center py-2">Bookmarker</h1>
+    <div class="container mt-5 content  py-5">
+      <h2 class="text-center">
+        <i class="fa-solid fa-bookmark"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+      </h2>
+      <div class="my-3">
+        <label class="align-self-start py-2" for="bookMarkName"><i class="fa-solid fa-book-bookmark pe-2"></i>Site
+          Name</label>
+        <input type="text" id="bookMarkName" class="form-control" placeholder="Bookmark Name"oninput="validateInp(this)" />
+        <div class="alert alert-danger py-1 mt-2 d-none">
+          Site name must contain at least 3 characters
+        </div>
+      </div>
+      <div class="my-3">
+        <label class="align-self-start py-2" for="bookMarkUrl"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+        <input type="text" id="bookMarkUrl" class="form-control" placeholder="Website URL" oninput="validateInp(this)"/>
+        <div class="alert alert-danger py-1 mt-2 d-none">
+          Site URL must be a valid one
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="py-2 px-5 rounded border-0 text-white" onclick="createItem()" id="btn-click" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
+      </div>
+
+    </div>
+   
+    <div class="container">
+      <table class="bg-light table text-center mt-4">
+        <thead>
+          <tr>
+            <th>index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableContent">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
+ 
+  
+</body>
+
+</html>
